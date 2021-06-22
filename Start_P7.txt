@@ -77,6 +77,20 @@ Retour sur Master -->
     
     --->New branch BackEnd_Sequelize_Routes
 
+        - création de 5 requetes basique ( CRUD )vers la table Todo(table de test)
+            get all : OK
+                  Postman --> get http://localhost:3000/api/all
+            Post create : OK 
+                  Postman --> post http://localhost:3000/api/new
+            Get One : OK 
+                  Postman --> get http://localhost:3000/api/find/id
+            Put modify :
+                  Postman --> put http://localhost:3000/api/modify
+                  (attention à l'id il passe dans le body)
+            Delete One : 
+                  Postman --> delete http://localhost:3000/api/delete/id
+
+
 
 
 

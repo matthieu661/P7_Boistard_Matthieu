@@ -1,5 +1,8 @@
 const http = require('http');
 const app = require('./app');
+/* import config de la db via sequelize */
+const db = require('./models/index.js');
+//const { sequelize } = require('./models/index');
 
 /* la fonction normalizePort renvoie un port valide,
  qu'il soit fourni sous la forme d'un numéro ou d'une chaîne */
@@ -40,13 +43,25 @@ const errorHandler = error => {
 };
 const server = http.createServer(app);
 
-server.on('error', errorHandler);
-/* un écouteur d'évènements est également enregistré,
- consignant le port ou le canal nommé sur lequel le serveur s'exécute dans la console.*/
-server.on('listening', () => {
-  const address = server.address();
-  const bind = typeof address === 'string' ? 'pipe ' + address : 'port ' + port;
-  console.log('Listening on ' + bind);
-}); 
-
-server.listen(port);
+db.sequelize.sync().then(function () {
+    console.log('db.sequelize = pass')
+    /* template*/
+    server.on("error", errorHandler);
+    server.on("listening", () => {
+      const address = server.address();
+      const bind =
+        typeof address === "string" ? "pipe " + address : "port " + port;
+      console.log("Listening on " + bind);
+     
+    });
+    server.listen(port);
+});
+/*const testConnexion = async function () {
+try {
+    await sequelize.authenticate();
+    console.log('Connection has been established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
+};
+testConnexion(); */

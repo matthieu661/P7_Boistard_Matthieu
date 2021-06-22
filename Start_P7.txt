@@ -27,7 +27,7 @@ BACKEND:
 Retour sur Master -->
 
 
---->New branche 'Backend' aprés le setup du projet
+--->New branche 'BackEnd' aprés le setup du projet
     -new branch 'function_X' pour chaques étapes clée puis merge.
 
         -création de la structure basique du Backend
@@ -46,9 +46,45 @@ Retour sur Master -->
 
                         commit --> git add . --> git commit -m"structure backend"
 
+    --->New branch BackEnd_Sql_Config 
+
+        - Installation de sql dans le projet : npm install sql2
+        - Connection à workbench 8.0 --> root mdp(Antilops123)    
+                -query : DROP DATABASE IF EXISTS groupomania;
+                        CREATE DATABASE groupomania; (test)
+
+            - config de sequelize : 
+                https://github.com/sequelize/sequelize/tree/3e5b8772ef75169685fc96024366bca9958fee63
+                https://sequelize.org/master/index.html
+
+                - config\config.json : changement password : Antilops123 et database : groupomania
+
+                - config server.js : 
+                    - Supression du template server.js
+                    - Import de la database sequelize ( chemin basique ) :  --> const db = require("./models");
+                    - Appel de la la db via sync.sequelize ( modification de la function template L-45); (X.sequelize.sync)
+
+                - Creation des models de donnée (tables) via sequelize :
+                    - 1 création d'un model générique Todo --> ./models/Todos.js
+                    - 2 verification dans workbench ( schema --> groupomania --> tables )
+                    - 3 création d'une route test : ./routes/apiRoutes
+                    - 4 Ajout du chemin dans app.js
+                    - 5 test de connexion avec POSTMAN 
+                        - P7 collection --> GET : http://localhost:3000/api/all
+                        - result = pass OK
+                
+                            commit --> git add . --> git commit -m "Sequalize configuration basique + Test postman"                
+    
+    --->New branch BackEnd_Sequelize_Routes
 
 
---->New branch SQL 
+
+
+
+
+
+
+
 
 -New branch 'Frontend' aprés la réalisation du FrontEnd
     -new branch 'function' pour chaques étapes puis merge.
@@ -60,18 +96,14 @@ FrontEnd :
 -Vue.js / Scss
 
 Backend :
--sequalize
+-express (framework)
+-sequalize (ODM)
+-mysql (bdd)
+-workbench 8.0 (visual sql)
+-PostMAN (route helper)
 
 ***Setup projet :
-
-
-
-Etape 1 :
--FrontEnd
-
-Etape 2 :
--BackEnd
-
-Etape 3 :
-
+-node
+-npm init
+-npm install sequelize sequelize-cli sql2
 ...

@@ -1,7 +1,14 @@
-/*Cette application Express contient quatre éléments de middleware */
 const express = require('express');
 
+
 const app = express();
+
+
+// routes const :
+// route use :
+// route test :
+const apiRoutes = require('./routes/apiRoutes');
+app.use("/api", apiRoutes);
 
 
 /*le premier enregistre « Requête reçue ! »

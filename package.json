@@ -1,0 +1,26 @@
+{
+  "name": "p7_boistard_matthieu",
+  "version": "1.0.0",
+  "description": "P7",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthieu661/P7_Boistard_Matthieu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matthieu661/P7_Boistard_Matthieu/issues"
+  },
+  "homepage": "https://github.com/matthieu661/P7_Boistard_Matthieu#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^6.6.2"
+  }
+}

@@ -1,0 +1,31 @@
+***Création du repo Git  
+https://github.com/matthieu661/P7_Boistard_Matthieu
+clone repos sur matthieu pc secours
+***Création d'une collection Postman "P7"
+
+***methode :
+Aprés installation clean --> commit --> New branch "base Projet" (.save)
+
+SQL:
+    -Creation de la database Groupomania :
+    -log to mysql avec le root 
+        - cmd --> mysql -uroot --> demande le mdp : Antilops123 --> connecté
+    -Création de la DB
+        - CREATE DATABASE groupomania;
+BACKEND:
+    -Creation du .gitignore ( add --> startP7 / ... )
+    -Installation de nmp --> ps : npm install
+    -Initialisation de npm --> ps : npm install
+    add-on :
+    -Installation de nodemon : ps : npm install --save-dev nodemon (autorefresh)
+                    https://www.npmjs.com/package/nodemon
+    -Installation de expresse : ps : npm install express --save (framework)
+                    http://expressjs.com/
+    -Installation de sequalize : ps : npm install --save sequelize (ODM gestion SQL -- remplace mongoose)
+                    https://sequelize.org/master/manual/getting-started.html
+
+
+
+création de la banche BaseProjet(save) --> commit --> Retour Master pour creer une branche BACKEND
+
+

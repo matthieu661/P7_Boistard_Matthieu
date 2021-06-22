@@ -1,0 +1,77 @@
+***Création du repo Git  
+https://github.com/matthieu661/P7_Boistard_Matthieu
+clone repos sur matthieu pc secours
+***Création d'une collection Postman "P7"
+
+***methode :
+Aprés installation clean --> commit --> New branch "base Projet" (.save)
+
+SQL:
+    -Creation de la database Groupomania :
+    -log to mysql avec le root 
+        - cmd --> mysql -uroot --> demande le mdp : Antilops123 --> connecté
+    -Création de la DB
+        - CREATE DATABASE groupomania;
+BACKEND:
+    -Creation du .gitignore ( add --> startP7 / ... )
+    -Installation de nmp --> ps : npm install
+    -Initialisation de npm --> ps : npm install
+    add-on :
+    -Installation de nodemon : ps : npm install --save-dev nodemon (autorefresh)
+                    https://www.npmjs.com/package/nodemon
+    -Installation de expresse : ps : npm install express --save (framework)
+                    http://expressjs.com/
+    -Installation de sequalize : ps : npm install --save sequelize (ODM gestion SQL -- remplace mongoose)
+                    https://sequelize.org/master/manual/getting-started.html
+
+Retour sur Master -->
+
+
+--->New branche 'Backend' aprés le setup du projet
+    -new branch 'function_X' pour chaques étapes clée puis merge.
+
+        -création de la structure basique du Backend
+            - Fichier server src : --> server.js
+            - Fichier Racine express : --> app.js
+            - Installation de sequelize-cli --> npm install sequelize-cli
+            --> structure du BACKEND :
+                - Init de sequelize --> npx sequelize init (not npm=npX)
+                    - Fichier config\config.json (crée par sequelize-cli)
+                    - Dossier models (crée par sequalize-cli)
+                    - Dossier migrations (crée par sequalize-cli)
+                    - Dossier seeders (crée par sequelize-cli)
+                - Dossier middleweare
+                - Dossier route
+                - Dossier controller 
+
+                        commit --> git add . --> git commit -m"structure backend"
+
+
+
+--->New branch SQL 
+
+-New branch 'Frontend' aprés la réalisation du FrontEnd
+    -new branch 'function' pour chaques étapes puis merge.
+..
+-New branch 'soutenance' pour la présentation
+
+***Techno :
+FrontEnd :
+-Vue.js / Scss
+
+Backend :
+-sequalize
+
+***Setup projet :
+
+
+
+Etape 1 :
+-FrontEnd
+
+Etape 2 :
+-BackEnd
+
+Etape 3 :
+
+...

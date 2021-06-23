@@ -90,12 +90,21 @@ Retour sur Master -->
             Delete One : 
                   Postman --> delete http://localhost:3000/api/delete/id
 
+                        commit --> "POSTMAN des 5 routes basiques"
+
+1 End
+2 Start
+
+        - création du models sequelize pour les routes de groupomania 
+            https://sequelize.org/master/manual/model-basics.html#:~:text=A%20model%20in%20Sequelize%20has%20a%20name.%20This,%28such%20as%20Users%29%2C%20although%20this%20is%20fully%20configurable.
+
+            -création des fichiers :
+                - ./models/user.js
+                - ./models/Profile.js
+                
 
 
-
-
-
-
+    ****            - utilisation des migrations : --> ./sequelize.txt
 
 
 

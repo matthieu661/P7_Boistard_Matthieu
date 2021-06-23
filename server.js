@@ -2,7 +2,7 @@ const http = require('http');
 const app = require('./app');
 /* import config de la db via sequelize */
 const db = require('./models/index.js');
-//const { sequelize } = require('./models/index');
+const { sequelize } = require('./models/index');
 
 /* la fonction normalizePort renvoie un port valide,
  qu'il soit fourni sous la forme d'un numéro ou d'une chaîne */
@@ -56,7 +56,7 @@ db.sequelize.sync().then(function () {
     });
     server.listen(port);
 });
-/*const testConnexion = async function () {
+const testConnexion = async function () {
 try {
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
@@ -64,4 +64,4 @@ try {
     console.error('Unable to connect to the database:', error);
   }
 };
-testConnexion(); */
+testConnexion(); 

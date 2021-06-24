@@ -3,13 +3,14 @@ module.exports = (sequelize, DataTypes) => {
         text: {
             type : DataTypes.STRING,
             allowNull: false
-        }
+        },
     });
 
     Post.associate = models => {
         Post.belongsTo(models.User, {
             foreignKey : {
-                allowNull :false
+                allowNull :false,
+                onDelete:'CASCADE'
             },
         });
     };

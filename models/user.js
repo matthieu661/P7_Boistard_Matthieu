@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
         username : {
             type: DataTypes.STRING,
             allowNull: false 
-        }
+        },
     });
 
 
@@ -15,11 +15,12 @@ module.exports = (sequelize, DataTypes) => {
                 declaré dans le meme bloc sinon
                 "Profile is not associated to User!"*/
 
-        User.hasMany(models.Post, {
-            onDelete: "cascade"
+        User.hasMany(models.Post, { 
+            onDelete: "CASCADE",
+            
         });
         User.hasOne(models.Profile, {
-            onDelete: "cascade"
+            onDelete: "CASCADE",
         });
     };
     

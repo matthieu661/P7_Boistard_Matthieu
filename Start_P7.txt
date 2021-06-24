@@ -95,13 +95,105 @@ Retour sur Master -->
 1 End
 2 Start
 
-        - création du models sequelize pour les routes de groupomania 
+        - création des models sequelize pour les routes de groupomania 
             https://sequelize.org/master/manual/model-basics.html#:~:text=A%20model%20in%20Sequelize%20has%20a%20name.%20This,%28such%20as%20Users%29%2C%20although%20this%20is%20fully%20configurable.
 
-            -création des fichiers :
-                - ./models/user.js
+            mémo : association
+            La création d’associations dans sequelize se fait en appelant l’une des fonctions belongsTo / hasOne / hasMany / belongsToMany sur un modèle (la source), et en fournissant un autre modèle comme premier argument à la fonction (la cible).‎
+
+                ‎hasOne - ajoute une clé étrangère à la cible et des mixins d’association singuliers à la source.‎
+
+                ‎belongsTo - ajoutez une clé étrangère et des mixins d’association singuliers à la source.‎
+
+                ‎hasMany - ajoute une clé étrangère aux mixins d’association cible et pluriel à la source.‎
+
+                ‎belongsToMany - crée une association N:M avec une table de jointure et ajoute des mixins d’association pluriels à la source. La table de jonction est créée avec sourceId et targetId.‎
+
+            -création des fichiers models template :
+
+                - ./models/user.js  
+                    Parent --> ( ps : ne pas declarer 2x la methode ".associate" )
                 - ./models/Profile.js
-                
+                    enfant
+                - ./models/post.js
+                    enfant
+
+            -création des fichiers routes :
+
+                - ./routes/user-routes.js
+                - ./routes/profile-routes.js
+                - ./routes/post-routes.js
+
+            - création de la logique basique (temporairement dans les fichiers routes) :
+
+ EN COURS :  etape 1
+
+               - ./routes/user-routes.js :
+                    - create user OK
+                        Postman OK 
+                    - find All user (min) OK
+                        Postman OK
+                    - find All user (max) --> J+1 edit : ajout des données (db.Post ) dans la response
+                        Postman OK
+
+                        edit J+1 :
+                    - find One OK
+                        Postman OK
+                    - modify OK
+                        PostMAN ok
+                    - delete NO --> Cannot delete or update a parent row: a foreign key constraint fails 
+
+                    le onDelete Cascade ne fonctionne pas.
+
+                    solution Trouvé : passé par le front et demander la suppression des POST et PROFILE avant. 
+
+
+
+               - ./routes.profile-routes.js :
+
+                    - create profile OK
+                        Postman OK
+                    - Find One OK --> J+1 edit : ajout des données ( db.User ) dans la response
+                        Postman OK
+                    - Find All OK   
+                        Postman OK
+
+                                    edit J+1 :
+                    - modify OK
+                        Postman OK
+                    - delete OK
+                        Postman OK
+                    
+                - ./routes/post-routes.js :
+
+                                    edit J+1 :
+                    - create OK
+                        Postman OK --> (RAPPEL : Postman sensible aux espaces dans les champs)
+                    - get One  OK
+                        Postman OK
+                    - modify OK
+                        Postman OK
+                    - Delete One OK
+                        Postman OK
+
+                        J0  commit --> "Mise en place de l'association des tables et logique template des routes"
+
+
+                        J+1 commit -->  "Bloquage DeleteUser " 
+
+                    
+
+---> New branch Données groupomania
+A FAIRE :  Etape 2 : route specifique à l'application et models definis
+
+A FAIRE :  Etape 3 : structure du projet, deplacer la logique dans les controlers, créer les middleware de securité et validation
+
+A FAIR : Etape 4 : guide de fonctionnement de l'Api
+                     
+
+                    
+
+
 
 
     ****            - utilisation des migrations : --> ./sequelize.txt

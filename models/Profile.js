@@ -5,12 +5,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         }
     });
-
     Profile.associate = models => {
         Profile.belongsTo(models.User, {
             foreignKey: {
                 allowNull :false
-            }
+            },
         });
     };
 
